@@ -2,36 +2,41 @@
 
 ## Description
 
-This project implements a speech classification system using the **X-vector architecture**, following the **SpeechBrain** methodology. It focuses on extracting robust speaker embeddings and classifying audio signals from scratch. The entire development, from data preparation to model evaluation, was performed in **Google Colab**.
+This project implements a speech classification system using the **X-vector architecture**, following the **SpeechBrain** methodology. The model extracts speaker embeddings and classifies audio signals. The system was trained on a dataset of **1519 audio files** from **28 speakers**. The entire pipeline, from data preparation (JSON generation) to final evaluation, was executed in **Google Colab**.
 
-**❗❗ To view the complete project, including code, training logs, and visualizations, download the `Speech Classification from Scratch.html` file and open it locally in any web browser. ❗❗**
+**❗❗ To view the complete project, including source code, detailed training logs, and t-SNE visualizations, download the `Speech Classification from Scratch.html` file and open it locally in a web browser. ❗❗**
 
-## How the Model Works
+## Technical Details and Dataset
 
-1. **Environment Setup**: Configuration for local or Colab execution, including mounting Google Drive and installing dependencies like `speechbrain`.
-2. **Data Processing**: Preparation of audio signals and feature extraction for the X-vector model.
-3. **Architecture**: Implementation of the X-vector topology, known for its efficiency in capturing speaker-specific characteristics.
-4. **Integration**: The project uses specialized scripts to export the notebook into a standalone HTML report.
+- **Dataset**: 1519 audio samples, divided into:
+  - **Train**: 1050 files
+  - **Validation**: 215 files
+  - **Test**: 254 files
+- **Architecture**: X-vector topology for robust feature extraction.
+- **Hardware**: Executed on an NVIDIA GeForce RTX 3060 Laptop GPU.
+
+## Model Results
+
+The following performance metrics were obtained on the test set after the training process:
+
+| Metric | Value |
+|--------|-------|
+| **Best Validation Accuracy** | 99.07% |
+| **Final Test Accuracy** | 98.43% |
+| **Total Test Errors** | 4 / 254 |
+| **Macro-averaged EER (Equal Error Rate)** | 0.13% |
 
 ## Technologies Used
 
 - Python (**Google Colab**)
-- PyTorch
-- SpeechBrain
+- PyTorch / SpeechBrain
 - Jupyter Notebook
-
-## Model Results
-
-| Metric | Value |
-|-------|-------|
-| **Training Loss** | 0.0415 |
-| **Validation Loss** | 0.4385 |
-| **Test Error Rate** | 12.35% |
+- Matplotlib / Scikit-learn (for embedding visualization)
 
 ## Project Files
 
 - `Speech Classification from Scratch.ipynb` - main implementation notebook
-- `Speech Classification from Scratch.html` - exported results and visualizations
+- `Speech Classification from Scratch.html` - complete report with results and graphs
 
 ## Disclaimer
 
